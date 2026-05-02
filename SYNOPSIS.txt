@@ -100,12 +100,35 @@ DAY 2: MODERN JAVASCRIPT & ARRAY METHODS
    colors.splice(1, 1);      // Remove 1 item at index 1
    colors.includes("red");   // true
 
+
+
+6. THE REDUCE() METHOD
+   Concept: Combines all array elements into a single value (e.g., a total sum).
+   Example:
+   const prices = [10, 20, 30, 40];
+   const total = prices.reduce((acc, curr) => acc + curr, 0); 
+   // Result: 100
+
+7. BASIC WEB DEVELOPMENT (HTML & CSS)
+   Concept: Building page structure with HTML and styling with CSS.
+   Example:
+   // HTML: <button class="btn">Login</button>
+   // CSS: .btn { background-color: green; color: white; }
+   // CSS Hover: .btn:hover { background-color: darkgreen; }
+
+8. DOM INTERACTION & NAVIGATION
+   Concept: Using JS to get user input from the page and navigate to new URLs.
+   Example:
+   const user = document.getElementById("username").value; // Get input
+   window.location.href = "app.html"; // Redirect to a new page
+
 --------------------------------------------------------------------------------
 KEY TAKEAWAYS
 --------------------------------------------------------------------------------
 - Prefer '===' over '==' for safer comparisons.
 - Use 'const' by default, and 'let' only when reassignment is needed.
 - Template literals and Arrow functions significantly improve code readability.
-- Chaining methods like .filter().map() is a powerful way to process data.
+- Chaining methods like .filter().map().reduce() is a powerful way to process data.
+- CSS hover effects and JS redirections create a better user experience.
 
 ================================================================================
