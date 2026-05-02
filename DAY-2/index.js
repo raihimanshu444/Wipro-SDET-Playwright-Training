@@ -43,3 +43,33 @@ arr.filter(x => typeof x === "number").map(y => y * 2).forEach(abc => console.lo
 console.log(arr.find(x => x === "Himanshu")); //returns the first element which satisfies the condition(Himanshu is present)
 console.log(arr.find(x => x === "Himanshu1")); //returns undefined if no element satisfies the condition(Himanshu1 is not present)
 // Arrow function is represented by =>
+
+//reduce()
+
+const prices = [10, 20, 30, 40]; // tasks: find the total of all elements
+// let s = 0;
+// for (let i = 0; i < prices.length; i++) {
+//     s += prices[i]; // s = s + prices[i]
+// }
+
+const total = prices.reduce((acc, curr) => { return acc + curr }, 0);
+// 0 + 10 = 10
+// 10 + 20 = 30
+// 30 + 30 = 60
+// 60 + 40 = 100
+console.log(total); //100
+// console.log("Sum:", s);
+
+const fruitBasket = ['apple', 'banana', 'cherry', 'apple', 'apple', 'banana', 'pineapple']; // apple: 3, banana: 3, cherry: 1, pineapple: 1
+const tally = fruitBasket.reduce((acc, fruit) => {
+    acc[fruit] = (acc[fruit] || 0) + 1;
+    return acc;
+}, {}); // intial value of acc is an empty object
+console.log(tally); // {apple: 3, banana: 2, cherry: 1, pineapple: 1}
+
+// function b(a, c) {
+//     return a * c * 2;
+// }
+// function a(b, c) {
+//     return b(a(1, 2), c);
+// }
