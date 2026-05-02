@@ -45,9 +45,10 @@ console.log(colors); // ["red", "green", "blue"]
 // }
 
 // remove by index, obj, [1, length - 2] --> math.random() * (length - 2)
-console.log(colors.splice(0, 1)); //  REMOVE FROM START (1 ELEMENT) [red] [green] [blue] --> [green] [blue]
-console.log(colors.splice(1, 2)); // REMOVE FROM INDEX 1 (2 ELEMENTS) [green] [blue] --> []
-console.log(colors.splice(1, 3)); // REMOVE FROM INDEX 1 (3 ELEMENTS) [green] [blue] --> []
-console.log(colors.splice(Math.floor(Math.random() * (colors.length - 2)), 1)); // REMOVE 1 ELEMENT FROM RANDOM INDEX (EXCLUDING FIRST AND LAST) --> [green]
+let colors1 = ["red", "green", "blue"];
+console.log(colors1.splice(0, 1)); //  REMOVE FROM START (1 ELEMENT) [red] [green] [blue] --> [green] [blue]
+console.log(colors1.splice(1, 2)); // REMOVE FROM INDEX 1 (2 ELEMENTS) [green] [blue] --> [green] (remaining element)
+console.log(colors1.splice(1, 3)); // REMOVE FROM INDEX 1 (3 ELEMENTS) [green] --> [green] (remaining element)
+console.log(colors1.splice(Math.floor(Math.random() * (colors1.length - 2)), 1)); // REMOVE 1 ELEMENT FROM RANDOM INDEX (EXCLUDING FIRST AND LAST) --> [green]
 let str = "Hello World";
 console.log(str.slice(0, 5)); // "Hello" (EXTRACT FROM START)
