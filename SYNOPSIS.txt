@@ -1,5 +1,5 @@
 ================================================================================
-JAVASCRIPT TRAINING SYNOPSIS (DAY 1 & DAY 2)
+JAVASCRIPT TRAINING SYNOPSIS (DAY 1 - DAY 4)
 ================================================================================
 
 This document provides a concise summary of the core JavaScript concepts 
@@ -123,12 +123,85 @@ DAY 2: MODERN JAVASCRIPT & ARRAY METHODS
    window.location.href = "app.html"; // Redirect to a new page
 
 --------------------------------------------------------------------------------
+DAY 3: ADVANCED ARRAY LOGIC & CHALLENGES
+--------------------------------------------------------------------------------
+
+1. OBJECT PROPERTY EXTRACTION
+   Concept: Using .map() to pluck specific fields from a collection of objects.
+   Example:
+   const products = [{ id: 1, title: 'Laptop' }, { id: 2, title: 'Mouse' }];
+   const titles = products.map(p => p.title); // ['Laptop', 'Mouse']
+
+2. METHOD CHAINING
+   Concept: Combining multiple array methods in a single statement for efficient 
+   data processing.
+   Example:
+   const result = nums.filter(n => n % 2 === 0).map(n => n * n);
+   // Filters evens, then squares them.
+
+3. DATA AGGREGATION & FLATTENING
+   Concept: Using .reduce() for complex logic like calculating averages or 
+   flattening nested arrays.
+   Example:
+   const nested = [[1, 2], [3, 4]];
+   const flat = nested.reduce((acc, curr) => acc.concat(curr), []); 
+   // Result: [1, 2, 3, 4]
+
+--------------------------------------------------------------------------------
+DAY 4: ASYNCHRONOUS JAVASCRIPT & TIMERS
+--------------------------------------------------------------------------------
+
+1. PROMISES & ASYNCHRONOUS JAVASCRIPT
+   Concept: A Promise represents a value that will be available in the future. 
+   It is used to handle asynchronous operations like API calls and timers.
+
+   A Promise has three states:
+   - Pending: Initial state, operation is still running.
+   - Fulfilled (Resolved): Operation completed successfully.
+   - Rejected: Operation failed.
+
+   Example:
+   function getData() {
+       return new Promise((resolve, reject) => {
+           setTimeout(() => {
+               resolve("Data received");
+           }, 2000);
+       });
+   }
+
+   getData()
+       .then((data) => {
+           console.log(data); // Runs when promise is resolved
+       })
+       .catch((error) => {
+           console.error("Error:", error); // Runs when promise is rejected
+       });
+
+   Explanation:
+   - new Promise() is used to create an asynchronous task.
+   - resolve() is called when the task is successful.
+   - reject() is called when the task fails.
+   - .then() handles the success result.
+   - .catch() handles errors.
+   - setTimeout() is used here to simulate a delay like an API call.
+
+2. TIMERS: SETTIMEOUT VS SETINTERVAL
+   Concept: Controlling the timing of code execution.
+   - setTimeout: Executes once after a specified delay.
+   - setInterval: Executes repeatedly at a fixed time interval.
+   Example:
+   setTimeout(() => console.log("Once after 5s"), 5000);
+   setInterval(() => console.log("Repeating every 3s"), 3000);
+
+--------------------------------------------------------------------------------
 KEY TAKEAWAYS
 --------------------------------------------------------------------------------
 - Prefer '===' over '==' for safer comparisons.
 - Use 'const' by default, and 'let' only when reassignment is needed.
 - Template literals and Arrow functions significantly improve code readability.
 - Chaining methods like .filter().map().reduce() is a powerful way to process data.
+- Promises allow JS to handle time-consuming tasks without freezing the browser.
+- Use setTimeout for one-time delays and setInterval for recurring tasks.
 - CSS hover effects and JS redirections create a better user experience.
 
 ================================================================================
