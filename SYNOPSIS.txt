@@ -196,28 +196,28 @@ DAY 4: ASYNCHRONOUS JAVASCRIPT & TIMERS
 3. API FETCHING (FETCH API)
    Concept: Using the built-in fetch() method to request data from external APIs.
    - res.json(): Converts the raw response into a usable JS object.
-   - Data Transformation: Extracting specific fields and performing calculations 
-     (like temp conversion) before using the data.
-   Example:
+   - Data Transformation: Extracting specific fields, filtering results, and 
+     performing calculations.
+
+   Practice Portfolio (10 API Examples):
+   1.  Weather API: Celsius to Fahrenheit conversion.
+   2.  JSONPlaceholder (Todos): Filtering completed tasks.
+   3.  JSONPlaceholder (Users): Extracting nested address data.
+   4.  Fake Store: Filtering by price and calculating total sum (reduce).
+   5.  Random User: Mapping results to get names and countries.
+   6.  Dog API: Extracting image URLs from an array.
+   7.  REST Countries: Filtering by population (>100M).
+   8.  Bored API: Fetching random activities.
+   9.  SpaceX: Filtering successful launches.
+   10. Cat Facts: Extracting string data and its length.
+
+   Example Structure:
    fetch(url)
      .then(res => res.json())
      .then(data => {
-         const result = {
-             city: data.location.name,
-             tempF: (data.current.temperature * 1.8) + 32
-         };
+         // Logic: Filter -> Map -> Process
+         const result = data.map(item => ({ ... })); 
          console.log(result);
      });
-
---------------------------------------------------------------------------------
-KEY TAKEAWAYS
---------------------------------------------------------------------------------
-- Prefer '===' over '==' for safer comparisons.
-- Use 'const' by default, and 'let' only when reassignment is needed.
-- Template literals and Arrow functions significantly improve code readability.
-- Chaining methods like .filter().map().reduce() is a powerful way to process data.
-- Promises allow JS to handle time-consuming tasks without freezing the browser.
-- Use setTimeout for one-time delays and setInterval for recurring tasks.
-- CSS hover effects and JS redirections create a better user experience.
 
 ================================================================================
