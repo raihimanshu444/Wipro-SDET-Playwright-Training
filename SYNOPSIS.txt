@@ -193,6 +193,22 @@ DAY 4: ASYNCHRONOUS JAVASCRIPT & TIMERS
    setTimeout(() => console.log("Once after 5s"), 5000);
    setInterval(() => console.log("Repeating every 3s"), 3000);
 
+3. API FETCHING (FETCH API)
+   Concept: Using the built-in fetch() method to request data from external APIs.
+   - res.json(): Converts the raw response into a usable JS object.
+   - Data Transformation: Extracting specific fields and performing calculations 
+     (like temp conversion) before using the data.
+   Example:
+   fetch(url)
+     .then(res => res.json())
+     .then(data => {
+         const result = {
+             city: data.location.name,
+             tempF: (data.current.temperature * 1.8) + 32
+         };
+         console.log(result);
+     });
+
 --------------------------------------------------------------------------------
 KEY TAKEAWAYS
 --------------------------------------------------------------------------------
