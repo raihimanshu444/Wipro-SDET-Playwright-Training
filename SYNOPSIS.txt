@@ -1,5 +1,5 @@
 ================================================================================
-JAVASCRIPT TRAINING SYNOPSIS (DAY 1 - DAY 4)
+JAVASCRIPT TRAINING SYNOPSIS (DAY 1 - DAY 5)
 ================================================================================
 
 This document provides a concise summary of the core JavaScript concepts 
@@ -56,10 +56,18 @@ DAY 1: FOUNDATIONS & BASIC LOGIC
        console.log(i); // Loops 3 times
    }
 
-   switch(choice) {
+    switch(choice) {
        case "A": console.log("A selected"); break;
        default: console.log("Invalid selection");
    }
+
+--------------------------------------------------------------------------------
+KEY TAKEAWAYS (DAY 1)
+--------------------------------------------------------------------------------
+- Prefer '===' over '==' for safer comparisons (checks value and type).
+- Use 'const' by default; use 'let' only for variables that will change.
+- Understand the difference between block-scope (let/const) and function-scope (var).
+- JavaScript is dynamically typed, meaning a variable's type can change at runtime.
 
 --------------------------------------------------------------------------------
 DAY 2: MODERN JAVASCRIPT & ARRAY METHODS
@@ -123,6 +131,14 @@ DAY 2: MODERN JAVASCRIPT & ARRAY METHODS
    window.location.href = "app.html"; // Redirect to a new page
 
 --------------------------------------------------------------------------------
+KEY TAKEAWAYS (DAY 2)
+--------------------------------------------------------------------------------
+- Arrow functions significantly reduce boilerplate code for simple logic.
+- Template literals (backticks) make string interpolation much more readable.
+- Use .filter() to select specific data and .map() to transform data.
+- .reduce() is the most flexible array method, capable of recreating any other.
+
+--------------------------------------------------------------------------------
 DAY 3: ADVANCED ARRAY LOGIC & CHALLENGES
 --------------------------------------------------------------------------------
 
@@ -146,6 +162,13 @@ DAY 3: ADVANCED ARRAY LOGIC & CHALLENGES
    const nested = [[1, 2], [3, 4]];
    const flat = nested.reduce((acc, curr) => acc.concat(curr), []); 
    // Result: [1, 2, 3, 4]
+
+--------------------------------------------------------------------------------
+KEY TAKEAWAYS (DAY 3)
+--------------------------------------------------------------------------------
+- Chaining methods (.filter().map()) is powerful for processing complex data.
+- Always provide an initial value (like 0 or []) when using .reduce().
+- Extracting specific fields from API-like objects simplifies the final data view.
 
 --------------------------------------------------------------------------------
 DAY 4: ASYNCHRONOUS JAVASCRIPT & TIMERS
@@ -219,5 +242,55 @@ DAY 4: ASYNCHRONOUS JAVASCRIPT & TIMERS
          const result = data.map(item => ({ ... })); 
          console.log(result);
      });
+
+--------------------------------------------------------------------------------
+KEY TAKEAWAYS (DAY 4)
+--------------------------------------------------------------------------------
+- Promises handle operations that take time without freezing the browser.
+- Always use .catch() to handle potential network errors in fetch() calls.
+- setTimeout is for one-time delays, while setInterval is for recurring actions.
+- Practice with multiple public APIs builds confidence in handling diverse JSON.
+
+--------------------------------------------------------------------------------
+DAY 5: OOP, ADVANCED JS & ASYNC/AWAIT
+--------------------------------------------------------------------------------
+
+1. OBJECT-ORIENTED PROGRAMMING (OOP)
+   Concept: Organizing code into reusable classes and objects.
+   - Encapsulation: Using '#' for private variables (e.g., #balance) to protect data.
+   - Inheritance: Using 'extends' and 'super()' to share logic between classes.
+   - Polymorphism: Overriding parent methods in child classes (e.g., draw() in Square).
+   - Abstraction: Hiding complex internal details behind simple methods (e.g., brew()).
+
+2. ADVANCED JS CONCEPTS
+   - Getters/Setters: Controlling how data is accessed and validated.
+   - Static Methods: Methods called directly on the Class, not the instance.
+   - Method Chaining: Returning 'this' from methods to allow '.add().multiply()'.
+   - Object.freeze(): Making an object completely read-only.
+   - Destructuring: Cleanly extracting properties: const { name, age } = user.
+
+3. REFACTORING TO ASYNC/AWAIT
+   Concept: Making asynchronous code look and behave like synchronous code.
+   - try/catch: Modern way to handle errors in async functions.
+   - await: Pauses execution until the promise is resolved.
+   Example:
+   async function fetchData() {
+       try {
+           const res = await fetch(url);
+           const data = await res.json();
+           console.log(data);
+       } catch (err) {
+           console.error(err);
+       }
+   }
+
+--------------------------------------------------------------------------------
+KEY TAKEAWAYS (DAY 5)
+--------------------------------------------------------------------------------
+- Use '#' for truly private class properties (Encapsulation).
+- async/await is much cleaner and easier to debug than .then() chains.
+- Destructuring simplifies working with complex API response objects.
+- Method chaining (returning 'this') creates very readable utility classes.
+- Object.freeze() is useful for configuration objects that shouldn't change.
 
 ================================================================================
