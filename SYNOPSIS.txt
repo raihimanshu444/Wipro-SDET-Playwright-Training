@@ -316,6 +316,29 @@ DAY 6: ADVANCED DATA PIPELINES & CALLBACKS
    - Using resolve() to return data after a simulated processing time.
    - Calculating totals (using counters or .reduce()) inside async blocks.
 
+4. PROTOTYPES & SHARED MEMORY
+   Concept: Adding methods to a constructor's prototype so they are created 
+   once and shared by all instances.
+   - Efficiency: Saves memory by not copying methods to every object instance.
+   - Example: person.prototype.sayHi = function() { ... };
+
+5. MEMORY MANAGEMENT (STACK VS HEAP)
+   Concept: Understanding where different types of data are stored in JS.
+   - Stack: Stores primitives (numbers, strings, booleans) and function calls.
+   - Heap: Stores complex objects, arrays, and function references.
+   - Copying: Primitives are copied by value; Objects are copied by reference.
+
+6. THE SPREAD OPERATOR (...)
+   Concept: Expanding or merging arrays and objects into new structures.
+   - Array Merge: [...arr1, ...arr2]
+   - Object Merge: {...obj1, ...obj2}
+   - Creating Shallow Copies: let newObj = {...oldObj};
+
+7. CALLBACKS & HIGHER ORDER FUNCTIONS (HOF)
+   Concept: Functions that take other functions as arguments (e.g., .forEach()).
+   - Callbacks: Executed after another function finishes.
+   - Anonymous Callbacks: Used for one-time operations inside methods.
+
 PRACTICAL CHALLENGES (DAY 6):
 - Flight Parser: Split string "CITY-CITY:PRICE" into sorted objects.
 - Discount System: Used callbacks to apply 10% promo to Electronics > $200.
@@ -328,4 +351,7 @@ KEY TAKEAWAYS (DAY 6)
 - Use .split() strategically to break down complex raw data strings.
 - Callbacks allow for very flexible and reusable logic within functions.
 - To "return" data from a setTimeout, you must wrap it in a Promise.
+- Prototypes are the key to shared memory and efficient inheritance in JS.
+- Primitives live on the Stack (copy-by-value); Objects live on the Heap (copy-by-ref).
+- The Spread operator is the most concise way to merge data collections.
 - Descending sort logic: (a, b) => b.value - a.value
