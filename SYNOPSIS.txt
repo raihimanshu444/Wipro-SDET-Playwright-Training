@@ -293,4 +293,39 @@ KEY TAKEAWAYS (DAY 5)
 - Method chaining (returning 'this') creates very readable utility classes.
 - Object.freeze() is useful for configuration objects that shouldn't change.
 
-================================================================================
+--------------------------------------------------------------------------------
+DAY 6: ADVANCED DATA PIPELINES & CALLBACKS
+--------------------------------------------------------------------------------
+
+1. ADVANCED STRING PARSING
+   Concept: Converting raw, delimited strings (like CSV or pipe-separated) into 
+   clean JavaScript objects.
+   - Using .split() with different delimiters (-, :, |).
+   - Validating numeric data with isNaN() and Number().
+   - Converting final collections back to JSON with JSON.stringify().
+
+2. CALLBACKS IN DATA PIPELINES
+   Concept: Passing logic as a function (promo codes, tax logic) to be applied 
+   dynamically during array iteration.
+   - Defining 'Eligible' check callbacks.
+   - Applying transformations only to items that satisfy the callback condition.
+
+3. ASYNC SIMULATION WITH PROMISES
+   Concept: Wrapping logic in a new Promise() to simulate real-world API or 
+   database delays using setTimeout.
+   - Using resolve() to return data after a simulated processing time.
+   - Calculating totals (using counters or .reduce()) inside async blocks.
+
+PRACTICAL CHALLENGES (DAY 6):
+- Flight Parser: Split string "CITY-CITY:PRICE" into sorted objects.
+- Discount System: Used callbacks to apply 10% promo to Electronics > $200.
+- Movie Analytics: Processed "NAME|GENRE|VIEWS" with multi-condition filters.
+- Payroll System: Integrated async taxLogic callbacks with 2s delay simulation.
+
+--------------------------------------------------------------------------------
+KEY TAKEAWAYS (DAY 6)
+--------------------------------------------------------------------------------
+- Use .split() strategically to break down complex raw data strings.
+- Callbacks allow for very flexible and reusable logic within functions.
+- To "return" data from a setTimeout, you must wrap it in a Promise.
+- Descending sort logic: (a, b) => b.value - a.value
