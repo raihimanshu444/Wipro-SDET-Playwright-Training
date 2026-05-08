@@ -1,5 +1,5 @@
 ================================================================================
-JAVASCRIPT TRAINING SYNOPSIS (DAY 1 - DAY 5)
+JAVASCRIPT TRAINING SYNOPSIS (DAY 1 - DAY 7)
 ================================================================================
 
 This document provides a concise summary of the core JavaScript concepts 
@@ -320,7 +320,7 @@ DAY 6: ADVANCED DATA PIPELINES & CALLBACKS
    Concept: Adding methods to a constructor's prototype so they are created 
    once and shared by all instances.
    - Efficiency: Saves memory by not copying methods to every object instance.
-   - Example: person.prototype.sayHi = function() { ... };
+   - Example: Person.prototype.sayHi = function() { ... };
 
 5. MEMORY MANAGEMENT (STACK VS HEAP)
    Concept: Understanding where different types of data are stored in JS.
@@ -397,4 +397,3 @@ KEY TAKEAWAYS (DAY 7)
 - .hasOwnProperty() is the safest way to iterate over an object's own properties.
 - .splice() is destructive (modifies original), unlike .slice() (returns a copy).
 - Prototypes allow for memory-efficient method sharing across multiple objects.
-- for...of is generally preferred over for...in for iterating through array values.
