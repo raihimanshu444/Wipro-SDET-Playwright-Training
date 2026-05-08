@@ -355,3 +355,46 @@ KEY TAKEAWAYS (DAY 6)
 - Primitives live on the Stack (copy-by-value); Objects live on the Heap (copy-by-ref).
 - The Spread operator is the most concise way to merge data collections.
 - Descending sort logic: (a, b) => b.value - a.value
+
+--------------------------------------------------------------------------------
+DAY 7: HOISTING, PROTOTYPES & OBJECT INTERNALS
+--------------------------------------------------------------------------------
+
+1. HOISTING & TEMPORAL DEAD ZONE (TDZ)
+   Concept: JS moves declarations to the top of their scope during compilation.
+   - var Hoisting: Declaration is moved up, but value is 'undefined' until reached.
+   - let/const Hoisting: They are hoisted but remain in a "Temporal Dead Zone" 
+     until initialized; accessing them earlier throws a ReferenceError.
+   - Function Hoisting: Declarations are fully hoisted (can be called before defined).
+   - Function Expressions: (var/let sayHi = function...) are NOT hoisted.
+
+2. PROTOTYPAL INHERITANCE (OBJECT.CREATE)
+   Concept: Linking objects directly to other objects as their prototypes.
+   - Object.create(proto): Creates a new object with the specified prototype.
+   - Inheritance: Properties not found on the child are looked up in the parent.
+   - hasOwnProperty(): A method to check if a property exists directly on the 
+     object or is inherited from the prototype chain.
+
+3. ADVANCED ARRAY MUTATIONS & LOOPS
+   Concept: Using specific methods to rearrange or modify data structures.
+   - .reverse(): Reverses the array elements in place.
+   - .sort(): Sorts elements (default is lexicographical).
+   - .splice(index, count): Removes 'count' elements starting from 'index'.
+   - for...of loop: The modern way to iterate over values (not indices) in an array.
+
+4. SHARED METHODS VIA PROTOTYPES
+   Concept: Adding methods to a constructor's .prototype property ensures all 
+   instances share a single copy of the function in memory.
+   Example:
+   function Car() {}
+   Car.prototype.start = function() { console.log("Started"); };
+
+--------------------------------------------------------------------------------
+KEY TAKEAWAYS (DAY 7)
+--------------------------------------------------------------------------------
+- Always declare variables before use to avoid issues with the Temporal Dead Zone.
+- Use Function Declarations if you need hoisting; use Expressions/Arrows for cleaner scope.
+- .hasOwnProperty() is the safest way to iterate over an object's own properties.
+- .splice() is destructive (modifies original), unlike .slice() (returns a copy).
+- Prototypes allow for memory-efficient method sharing across multiple objects.
+- for...of is generally preferred over for...in for iterating through array values.
