@@ -1,5 +1,5 @@
 ================================================================================
-JAVASCRIPT TRAINING SYNOPSIS (DAY 1 - DAY 7)
+JAVASCRIPT TRAINING SYNOPSIS (DAY 1 - DAY 8)
 ================================================================================
 
 This document provides a concise summary of the core JavaScript concepts 
@@ -397,3 +397,43 @@ KEY TAKEAWAYS (DAY 7)
 - .hasOwnProperty() is the safest way to iterate over an object's own properties.
 - .splice() is destructive (modifies original), unlike .slice() (returns a copy).
 - Prototypes allow for memory-efficient method sharing across multiple objects.
+- for...of is generally preferred over for...in for iterating through array values.
+
+--------------------------------------------------------------------------------
+DAY 8: CORE JS LOGIC & ALGORITHMIC CHALLENGES
+--------------------------------------------------------------------------------
+
+1. ALGORITHMIC PROBLEM SOLVING
+   Concept: Implementing fundamental logic without relying purely on built-in methods.
+   - Fibonacci & Factorials: Using loops to generate numeric sequences.
+   - Sorting: Implementing the Bubble Sort algorithm manually using nested loops.
+   - String Manipulation: Reversing strings manually and identifying Palindromes.
+   - Prime & Armstrong Numbers: Applying mathematical conditions within loops.
+
+2. ADVANCED DATA STRUCTURE OPERATIONS
+   - Duplicate Removal: Using loops and .includes() to filter unique array elements.
+   - Object Merging: Using the Spread operator (...) to combine objects.
+   - Property Analysis: Counting keys and iterating over objects dynamically.
+
+3. CLOSURES & SCOPE REVISITED
+   Concept: Understanding how functions retain access to their outer lexical environment.
+   - Closures: Functions that "remember" variables from their parent scope even 
+     after the parent has finished.
+   - Scoping in Loops: Understanding why 'var' in a loop causes issues with 
+     asynchronous code (like setTimeout) and how 'let' fixes it.
+
+4. CALLBACKS & ASYNC FLOW
+   Concept: Passing functions as arguments to handle sequential or delayed logic.
+   - Sequential Execution: Chaining callbacks to ensure tasks run in order.
+   - Simulation: Using setTimeout and callbacks to model real-world async systems 
+     (e.g., Food Ordering).
+
+--------------------------------------------------------------------------------
+KEY TAKEAWAYS (DAY 8)
+--------------------------------------------------------------------------------
+- Use the Spread operator for shallow copies and merging collections easily.
+- Manual sorting (Bubble Sort) builds a deep understanding of array indexing.
+- Closures are essential for data privacy and state management in JS.
+- 'let' provides block scoping, which is critical for loops with async operations.
+- Callbacks are the foundation of handling asynchronous tasks before Promises.
+- Always provide base cases and exit conditions in loops to avoid memory leaks.
