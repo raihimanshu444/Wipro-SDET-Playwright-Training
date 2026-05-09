@@ -177,3 +177,86 @@ if (sum === num) {
     console.log("Not Armstrong");
 }
 
+//    ******Arrays******
+
+// 1. Find the largest and smallest number in an array.
+
+let arr=[20,30,40,50,10];
+let max=arr[0];
+let min=arr[0];
+
+for(i=1;i<arr.length;i++){
+    if(arr[i]>max){
+        max=arr[i]
+    }
+    if(arr[i]<min){
+        min=arr[i]
+    }
+}
+console.log("Maximum number = ",max); //50
+console.log("Minimum number = ",min); //10
+
+// 2. Remove duplicate elements from an array.
+
+let arr2 = [1, 2, 2, 3, 4, 4, 5];
+
+let unique = [];
+
+for (let num of arr2) {
+
+    if (!unique.includes(num)) {
+        unique.push(num);
+    }
+}
+console.log(unique); // [1, 2, 3, 4, 5]
+
+// 3. Sort an array without using built-in sort().
+
+let arr3 = [5, 2, 8, 1, 3];
+
+for (let i = 0; i < arr3.length; i++) {
+    for (let j = 0; j < arr3.length - i - 1; j++) {  //after every swap largest element goes to its correct position at the end of array so we dont need to check it again
+        if (arr3[j] > arr3[j + 1]) {
+            let temp = arr3[j];
+            arr3[j] = arr3[j + 1];
+            arr3[j + 1] = temp;
+        }
+    }
+}
+
+console.log(arr3); // [1,2,3,5,8]
+
+// 4. Find second largest number in an array.
+
+let newArray=[10,5,12,34,50,11];
+let maxNum=newArray[0];
+let secMax=newArray[0];
+
+for(i=1;i<newArray.length;i++){
+    if(newArray[i]>maxNum){
+        secMax=maxNum;
+        maxNum=newArray[i];
+    }else if(newArray[i]>secMax && newArray[i]!=maxNum){
+        secMax=newArray[i];
+    }
+}
+console.log("Second largest number = ",secMax); //34
+
+
+// 5. Merge two arrays and remove duplicates.
+
+let firstArray = [1, 2, 3];
+let secondArray = [3, 4, 5];
+
+let mergedArray = [...firstArray, ...secondArray];
+
+let uniqueArray = [];
+
+for (let num of mergedArray) {
+
+    if (!uniqueArray.includes(num)) {
+        uniqueArray.push(num);
+    }
+}
+
+console.log(uniqueArray); //[1,2,3,4,5]
