@@ -95,3 +95,18 @@ names.addItems("Arush");
 names.addItems("Rohan");
 
 console.log(names.getItem(0), names.getItem(1), names.getItem(2), names.getItem(3)); // undefined for index 3  Himanshu Arush Rohan undefined
+
+
+//Any value using HasLength must have a length property.
+interface HasLength { // contraints | extends keyword
+    length: number;
+}
+
+// generics with contraints | extends keyword
+function logLength<T extends HasLength>(arg: T): void { // T -> property .length --> string, arrays   T can be any datatype BUT it must have a .length property.
+    console.log(arg.length);  // property accessor  
+}
+
+logLength("Himanshu"); // string --> length 8
+logLength([1, 2, 3]); // array --> length 3
+// logLength(10); // number --> X  Property 'length' does not exist on type 'number'
