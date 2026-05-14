@@ -1,0 +1,50 @@
+================================================================================
+PLAYWRIGHT AUTOMATION SYNOPSIS (DAY 12 ONWARDS)
+================================================================================
+
+This document provides an easy-to-understand summary of the concepts, setup, 
+and syntax used for UI Automation Testing using Playwright.
+
+--------------------------------------------------------------------------------
+DAY 12: INTRODUCTION TO PLAYWRIGHT & BASIC LOCATORS
+--------------------------------------------------------------------------------
+
+1. INITIAL SETUP & CONFIGURATION
+   - Command: 'npm init playwright@latest' sets up the testing framework.
+   - Configuration: 'playwright.config.js' controls which browsers to test on 
+     (Chromium, WebKit, Firefox).
+   - Tip: If Windows throws missing DLL errors (e.g., ext-ms-win-rtcore...) 
+     for Firefox, you can safely comment out the Firefox project in the config 
+     to continue practicing with Chromium.
+
+2. CORE PLAYWRIGHT FUNCTIONS
+   - test(): Defines a new test case.
+   - expect(): Used to validate/check conditions (Assertions).
+   - page: A "fixture" representing an isolated browser tab. 
+     Always used inside an 'async' function because browser actions take time.
+   - page.goto('url'): Tells the browser to open a specific website and wait 
+     for it to load.
+
+3. LOCATING ELEMENTS (Finding things on the screen)
+   Concept: Before you can click or type, you must find the element.
+   - page.locator(): The traditional way to find elements using XPath or CSS. 
+     (e.g., page.locator('//*[@id="root"]...'))
+   - page.getByRole(): The recommended, user-friendly way to find elements based 
+     on what they are (button, link, heading).
+   - .nth(index): Used when multiple elements match your search. 
+     (e.g., .nth(1) selects the SECOND element found, as it starts at 0).
+
+4. ACTIONS & ASSERTIONS (Doing things and checking results)
+   - .click(): Simulates a mouse click on a located element.
+   - expect(page.url()).toBe('url'): Checks if the browser navigated to the 
+     correct page after clicking.
+
+--------------------------------------------------------------------------------
+KEY TAKEAWAYS (DAY 12)
+--------------------------------------------------------------------------------
+- Always use 'await' before page actions (like goto, click, or expect) because 
+  the code needs to wait for the browser to finish the action.
+- 'getByRole' is better than XPath because it's easier to read and works like a 
+  real user looking at the screen.
+- When a locator finds multiple identical buttons (like two "Request" links), 
+  use '.nth()' to specify exactly which one you want to click.
