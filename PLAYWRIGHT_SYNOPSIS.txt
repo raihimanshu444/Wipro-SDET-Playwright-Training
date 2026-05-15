@@ -1,5 +1,5 @@
 ================================================================================
-PLAYWRIGHT AUTOMATION SYNOPSIS (DAY 12 ONWARDS)
+PLAYWRIGHT AUTOMATION SYNOPSIS (DAY 12 - DAY 13)
 ================================================================================
 
 This document provides an easy-to-understand summary of the concepts, setup, 
@@ -48,3 +48,43 @@ KEY TAKEAWAYS (DAY 12)
   real user looking at the screen.
 - When a locator finds multiple identical buttons (like two "Request" links), 
   use '.nth()' to specify exactly which one you want to click.
+
+--------------------------------------------------------------------------------
+DAY 13: DATA-DRIVEN TESTING & WEB APP INTEGRATION
+--------------------------------------------------------------------------------
+
+1. INTEGRATING WITH A REAL WEB APP
+   - Testing against a local server: Playwright can test apps running locally 
+     (e.g., 'http://localhost:3000').
+   - Prerequisites: The server must be running in a separate terminal before 
+     starting the tests.
+
+2. DATA-DRIVEN TESTING (DDT)
+   - Concept: Running the same test logic multiple times with different inputs 
+     (e.g., testing various login credentials).
+   - Implementation: 
+     - Store test data in an array of objects.
+     - Use '.forEach()' to loop over the data and generate dynamic test cases.
+   - Benefit: Reduces code duplication and ensures all edge cases (invalid pass, 
+     short username, success) are tested.
+
+3. ADVANCED ACTIONS & LOCATORS
+   - .fill('value'): Used to type text into input fields like 'username' or 'password'.
+   - ID Selectors: Using '#id' (e.g., '#username') to find elements precisely.
+   - .textContent(): Capturing the text visible in an element (like an error message).
+
+4. CODE REUSABILITY (UTILITIES)
+   - Concept: Moving repetitive logic (like a login flow) into a separate 
+     helper file ('utils.js').
+   - Benefit: Makes the main test file cleaner and the logic reusable across 
+     different test files. (First step towards Page Object Model).
+
+--------------------------------------------------------------------------------
+KEY TAKEAWAYS (DAY 13)
+--------------------------------------------------------------------------------
+- Data-Driven Testing makes your test suite highly efficient by separating 
+  "what to test" (data) from "how to test" (logic).
+- Modern web testing involves a loop: Enter Data -> Click -> Assert Message.
+- Using a '.env' file is crucial for managing configuration like PORT numbers.
+- Always check that your server is running before executing tests that target 
+  localhost!
