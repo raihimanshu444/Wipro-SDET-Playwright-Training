@@ -1,5 +1,5 @@
 ================================================================================
-PLAYWRIGHT AUTOMATION SYNOPSIS (DAY 12 - DAY 13)
+PLAYWRIGHT AUTOMATION SYNOPSIS (DAY 12 - DAY 14)
 ================================================================================
 
 This document provides an easy-to-understand summary of the concepts, setup, 
@@ -88,3 +88,43 @@ KEY TAKEAWAYS (DAY 13)
 - Using a '.env' file is crucial for managing configuration like PORT numbers.
 - Always check that your server is running before executing tests that target 
   localhost!
+
+--------------------------------------------------------------------------------
+DAY 14: ES MODULES & ADVANCED PLAYWRIGHT CONFIG
+--------------------------------------------------------------------------------
+
+1. ES MODULES (ESM) IN NODE.JS
+   - .mjs Extension: Tells Node.js to use modern ECMAScript Modules.
+   - import/export: Using 'import name from "./file.mjs"' and 'export default' 
+     to share code between files instead of 'require' and 'module.exports'.
+   - Modular Code: Separating math logic (op.mjs) from main logic (cal.mjs) 
+     is a standard industry practice.
+
+2. AUTOMATING THE TEST ENVIRONMENT (webServer)
+   - Automation: You can configure Playwright to automatically start your 
+     backend server (node index.js) before the tests begin.
+   - Config Settings:
+     - cwd: The directory where the server code lives.
+     - command: The command to start the server.
+     - url: The URL to wait for before running tests.
+   - Benefit: No need to manually open two terminal windows anymore!
+
+3. SCREENSHOT CONFIGURATION
+   - Capture Logic: Controlled via 'playwright.config.js' under the 'use' block.
+     - 'on': Take screenshots for every test.
+     - 'only-on-failure': Only save screenshots when a test fails (Best practice).
+     - 'off': Never take screenshots.
+   - Storage: Screenshots are automatically saved in the 'test-results' folder.
+
+4. BUILT-IN NODE MODULES
+   - path Module: Used for directory management (path.resolve, path.join). 
+     This ensures your code works correctly on both Windows and Linux.
+
+--------------------------------------------------------------------------------
+KEY TAKEAWAYS (DAY 14)
+--------------------------------------------------------------------------------
+- Using 'webServer' makes your automation truly independent and CI/CD ready.
+- Modular code (mjs) makes your test scripts easier to maintain and read.
+- 'screenshot: only-on-failure' is the most efficient way to debug without 
+  cluttering your project with thousands of images.
+- Always use 'path.resolve' for directory paths to avoid "File Not Found" errors.
